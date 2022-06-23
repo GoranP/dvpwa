@@ -1,0 +1,33 @@
+
+name: Horusec Security Scan
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "master" ]
+  schedule:
+    - cron: '28 19 * * 2'
+
+permissions:
+  contents: read
+
+horusec-security:
+    name: horusec-security
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+      with: # Required when commit authors is enabled
+        fetch-depth: 0
+    - name: Running Horusec Security
+      run: |
+        curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
+        horusec start -w -j -p="./" -e="true"        
+
+      # # Upload the SARIF file generated in the previous step
+      # - name: Upload SARIF results file
+      #   uses: github/horusec-action/upload-sarif@v2
+      #   with:
+      #     sarif_file: results.sarif
