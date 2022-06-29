@@ -47,7 +47,7 @@ jobs:
         with:
           push: true
           tags: goranpp/dvpa-secure:latest
-          file: "{ context }/DockerFile.app"
+          file: {context}/DockerFile.app
       
 
        
