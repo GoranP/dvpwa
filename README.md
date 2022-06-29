@@ -7,7 +7,7 @@ This repo is a clone of [DVPWA](https://github.com/anxolerd/dvpwa) and is used f
 
 
 For **SAST** and **SCA** analysis of the code, we use [Horusec](https://horusec.io/) open-source tool. In this case, we use only CLI, which is not integrated with [web UI](https://docs.horusec.io/docs/web/overview/) of Horusec. 
-The results of the analysis are the logs of workflow. 
+The results of the analysis are in the logs of workflow. 
 Workflow is defined in [workflow file](https://github.com/GoranP/dvpwa/blob/master/.github/workflows/horusec.yaml) 
 Workflow has two steps/jobs invoked upon merging or committing to a master or triage branch.
 
