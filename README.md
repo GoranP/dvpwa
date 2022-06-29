@@ -1,22 +1,16 @@
-===============================================
-DVPWA -- Damn Vulnerable Python Web Application
-
-DevSecOps workflow and security check
-===============================================
-
 
 DevSecOps workflow description
 ==============================
 
-DVPWA is an intentionally vulnerable application. 
-It is a clone of [DVPWA](https://github.com/anxolerd/dvpwa) and is used for devsecops workflow technical challenges.
+For purpose of this challnege we use DVPWA app. DVPWA is an intentionally vulnerable application. 
+This repo is a clone of [DVPWA](https://github.com/anxolerd/dvpwa) and is used for devsecops workflow technical challenges.
 
 
-For SAST and SCA analysis of the code, we use [Horusec](https://horusec.io/) open-source tool. In this case, we use only CLI, which is not integrated with [web UI](https://docs.horusec.io/docs/web/overview/) of Horusec. 
+For **SAST** and **SCA** analysis of the code, we use [Horusec](https://horusec.io/) open-source tool. In this case, we use only CLI, which is not integrated with [web UI](https://docs.horusec.io/docs/web/overview/) of Horusec. 
 The results of the analysis are the logs of workflow. 
 Workflow is defined in [workflow file](https://github.com/GoranP/dvpwa/blob/master/.github/workflows/horusec.yaml) 
 Workflow has two steps/jobs invoked upon merging or committing to a master or triage branch.
-The first step is SAST analysis of the code, and the second is building docker images and pushing them to the public docker repository.
+The first step is **SAST** and **SCA**  analysis of the code, and the second is building docker images and pushing them to the public docker repository.
 The second job depends on the first, and if the first job finds any vulnerabilities, the build pipeline will break.
 
 Analysis results
@@ -40,8 +34,8 @@ All fixes are visible in [triage](https://github.com/GoranP/dvpwa/tree/triage) b
 Comments about fixes are visible in [PR]()
 
 
-Vulnerabilities fixed in `triage` branch.
-========================================
+Vulnerabilities found in `master` and fixed in `triage` branch.
+===============================================================
 
 The following critical issues are fixed by increasing the version of the library:
 
