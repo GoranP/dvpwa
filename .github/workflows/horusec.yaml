@@ -3,10 +3,10 @@ name: DevSecOps workflow
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master","triage" ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ "master" ]
+    branches: [ "master", "triage" ]
 
 
 permissions:
@@ -23,7 +23,7 @@ jobs:
       - name: Running Horusec Security
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
-          horusec start --enable-commit-author  -j -p="./" -e="true" 
+          horusec start --enable-commit-author -p="./" -e="true" 
   build-secure-inmages:
       needs: horusec-security
       name: build-docker-images
