@@ -15,6 +15,10 @@ RUN apk add --no-cache --virtual build-deps gcc python3-dev musl-dev \
 RUN rm -rf /tmp/requirements.txt
 
 WORKDIR /app
-ADD ./run.py /app
-ADD ./sqli /app/sqli
-ADD ./config /app/config
+
+COPY ./run.py /app
+COPY ./sqli /app/sqli
+COPY ./config /app/config
+RUN adduser -D -h /app appuser
+RUN chown -R appuser:appuser /app
+USER appuser

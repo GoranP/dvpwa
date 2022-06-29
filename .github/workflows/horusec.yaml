@@ -23,7 +23,7 @@ jobs:
       - name: Running Horusec Security
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
-          horusec start --enable-commit-author -p="./" -e="true"
+          horusec start --enable-commit-author -p="./" -e="true" -s="LOW, MEDIUM, HIGH"
   build-secure-inmages:
       needs: horusec-security
       name: build-docker-images
@@ -56,6 +56,4 @@ jobs:
           tags: goranpp/postgres-secure:latest
           file: Dockerfile.db
  
-       
-
        

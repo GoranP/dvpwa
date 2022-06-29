@@ -200,4 +200,3 @@ Details: (1/3) * Possible vulnerability detected: MissConfiguration
 ==================================================================================
 
 ```
-

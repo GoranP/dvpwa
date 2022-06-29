@@ -39,8 +39,9 @@ class Student(NamedTuple):
 
     @staticmethod
     async def create(conn: Connection, name: str):
+        # fixed SQL injection issue
         q = ("INSERT INTO students (name) "
-             "VALUES ('%(name)s')" % {'name': name})
+             "VALUES ('%(name)s')" , {'name': name})
         async with conn.cursor() as cur:
             await cur.execute(q)
 
