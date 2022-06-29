@@ -1,5 +1,5 @@
 
-name: Horusec Security Scan
+name: DevSecOps workflow
 
 on:
   push:
@@ -48,7 +48,7 @@ jobs:
           context: .
           push: true
           tags: goranpp/dvpa-secure:latest
-          file: DockerFile.app.secure
+          file: DockerFile.app
       
 
        
