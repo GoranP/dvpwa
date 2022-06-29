@@ -10,7 +10,10 @@ For **SAST** and **SCA** analysis of the code, we use [Horusec](https://horusec.
 The results of the analysis are the logs of workflow. 
 Workflow is defined in [workflow file](https://github.com/GoranP/dvpwa/blob/master/.github/workflows/horusec.yaml) 
 Workflow has two steps/jobs invoked upon merging or committing to a master or triage branch.
-The first step is **SAST** and **SCA**  analysis of the code, and the second is building docker images and pushing them to the public docker repository.
+
+* The first step (_horusec-security_) is **SAST** and **SCA**  analysis of the code, 
+* The second step (_build-secure-images_) is building docker images and pushing them to the public docker repository.
+
 The second job depends on the first, and if the first job finds any vulnerabilities, the build pipeline will break.
 
 Analysis results
