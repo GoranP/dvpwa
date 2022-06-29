@@ -31,7 +31,7 @@ Detailed logs are visible in [workflow logs](https://github.com/GoranP/dvpwa/run
 For demonstration, two CRITICAL, two HIGH, one MEDIUM and one LOW issues are fixed, and all others are accepted.
 All fixes are visible in [triage](https://github.com/GoranP/dvpwa/tree/triage) branch.
 
-Comments about fixes are visible in [PR]()
+Comments about fixes are visible in [PR](https://github.com/GoranP/dvpwa/pull/1)
 
 
 Vulnerabilities found in `master` and fixed in `triage` branch.
