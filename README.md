@@ -2,7 +2,7 @@
 DevSecOps workflow description
 ==============================
 
-For purpose of this challnege we use DVPWA app. DVPWA is an intentionally vulnerable application. 
+For purpose of this technical assignement we use DVPWA app. DVPWA is an intentionally vulnerable application. 
 This repo is a clone of [DVPWA](https://github.com/anxolerd/dvpwa) and is used for devsecops workflow technical challenges.
 
 
