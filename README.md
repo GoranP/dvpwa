@@ -2,15 +2,18 @@
 DevSecOps workflow description
 ==============================
 
-For purpose of this challnege we use DVPWA app. DVPWA is an intentionally vulnerable application. 
+For purpose of this technical assignement we use DVPWA app. DVPWA is an intentionally vulnerable application. 
 This repo is a clone of [DVPWA](https://github.com/anxolerd/dvpwa) and is used for devsecops workflow technical challenges.
 
 
 For **SAST** and **SCA** analysis of the code, we use [Horusec](https://horusec.io/) open-source tool. In this case, we use only CLI, which is not integrated with [web UI](https://docs.horusec.io/docs/web/overview/) of Horusec. 
-The results of the analysis are the logs of workflow. 
+The results of the analysis are in the logs of workflow. 
 Workflow is defined in [workflow file](https://github.com/GoranP/dvpwa/blob/master/.github/workflows/horusec.yaml) 
 Workflow has two steps/jobs invoked upon merging or committing to a master or triage branch.
-The first step is **SAST** and **SCA**  analysis of the code, and the second is building docker images and pushing them to the public docker repository.
+
+* The first step (_horusec-security_) is **SAST** and **SCA**  analysis of the code, 
+* The second step (_build-secure-images_) is building docker images and pushing them to the public docker repository.
+
 The second job depends on the first, and if the first job finds any vulnerabilities, the build pipeline will break.
 
 Analysis results
@@ -197,4 +200,3 @@ Details: (1/3) * Possible vulnerability detected: MissConfiguration
 ==================================================================================
 
 ```
-
