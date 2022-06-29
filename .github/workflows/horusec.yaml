@@ -26,6 +26,7 @@ jobs:
           horusec start --enable-commit-author  -j -p="./" -e="true" 
 
   build-secure-inmages:
+      needs: horusec-security
       name: build-docker-images
       runs-on: ubuntu-latest
       steps:
